@@ -47,7 +47,13 @@ def evaluate(root):
 
 
 
+def count_operations(root):
+    if root.left is None and root.right is None:
+        return 0
 
+    left_operations = count_operations(root.left)
+    right_operations = count_operations(root.right)
 
+    return 1 + left_operations + right_operations
 
 
